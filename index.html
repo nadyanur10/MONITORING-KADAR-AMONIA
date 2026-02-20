@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Monitoring Kualitas Air</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<section id="login-page" class="login-body">
+    <div class="login-box modern fade-in">
+        <div class="login-header">
+            <h2>Sistem Monitoring Kualitas Air</h2>
+        </div>
+        
+        <form id="loginForm">
+            <div class="input-group">
+                <label>Username</label>
+                <input type="text" id="username" placeholder="Masukkan username" required>
+            </div>
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="password" placeholder="Masukkan password" required>
+            </div>
+            <button type="submit" class="btn-login">MASUK</button>
+        </form>
+
+        <div class="login-footer">
+            <p>© 2026 – Kolam Ikan</p>
+        </div>
+    </div>
+</section>
+
+
+<div id="app" style="display:none;">
+    
+    <nav class="navbar">
+        <div class="logo">WEB MONITORING</div>
+        <ul class="menu">
+            <li><a href="#" id="link-beranda" class="active" onclick="showSection('beranda')">Beranda</a></li>
+            <li><a href="#" id="link-riwayat" onclick="showSection('riwayat')">Riwayat Data</a></li>
+            <li><a href="#" onclick="handleLogout()">Logout</a></li>
+        </ul>
+    </nav>
+
+    <section id="beranda" class="fade-in">
+        <header class="header">
+            <div>
+                <h1>Monitoring Real-Time</h1>
+                <span>Kondisi Kolam Saat Ini</span>
+            </div>
+            <div class="status-esp">ESP32: <strong>OFFLINE</strong></div>
+        </header>
+
+        <main class="container">
+            <section class="cards">
+                <div class="card info">
+                    <h3>Amonia</h3>
+                    <p id="valAmonia">--</p><span>ppm</span>
+                </div>
+                <div class="card success">
+                    <h3>pH Air</h3>
+                    <p id="valPh">--</p>
+                </div>
+                <div class="card info">
+                    <h3>Suhu</h3>
+                    <p id="valSuhu">--</p><span>°C</span>
+                </div>
+                <div class="card warning">
+                    <h3>Kondisi Air</h3>
+                    <p id="valKondisi">--</p>
+                </div>
+            </section>
+
+            <section class="status">
+                <div class="status-card">
+                    <h4>Pompa Cairan Penetral</h4>
+                    <span class="off" id="statusPompa">--</span>
+                </div>
+                <div class="status-card">
+                    <h4>Aerator</h4>
+                    <span class="off" id="statusAerator">--</span>
+                </div>
+            </section>
+        </main>
+    </section>
+
+    <section id="riwayat" class="fade-in" style="display:none;">
+        <header class="header" style="background: linear-gradient(90deg, #1e40af, #2563eb);">
+            <div>
+                <h1>Riwayat Data & Grafik</h1>
+                <span>Laporan Historis Kualitas Air</span>
+            </div>
+        </header>
+
+        <main class="container">
+            <div class="chart-box">
+                <h3>Grafik Kualitas Air</h3>
+                <div style="height: 350px;">
+                    <canvas id="chartAir"></canvas>
+                </div>
+            </div>
+
+            <div class="table-box" style="margin-top: 25px;">
+                <h3>Detail Riwayat Parameter</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Waktu</th>
+                            <th>Amonia (ppm)</th>
+                            <th>pH</th>
+                            <th>Suhu (°C)</th>
+                            <th>Kondisi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bodyTabel">
+                        <tr><td colspan="5">Data belum tersedia</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </section>
+
+    <footer class="footer">
+        © 2026 – Sistem Monitoring Kualitas Air Kolam
+    </footer>
+
+</div> <script src="script.js"></script>
+
+</body>
+</html>
