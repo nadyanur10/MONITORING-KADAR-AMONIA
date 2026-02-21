@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - SmartPond</title>
+    <link rel="stylesheet" href="beranda.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">AQUA MONITOR</div>
+        <ul class="menu">
+            <li><a href="javascript:void(0)" id="link-beranda" class="active" onclick="showSection('beranda')">Beranda</a></li>
+            <li><a href="javascript:void(0)" id="link-riwayat" onclick="showSection('riwayat')">Riwayat</a></li>
+            <li><a href="javascript:void(0)" onclick="logout()" class="logout-link">Logout</a></li>
+        </ul>
+    </nav>
+
+    <section id="beranda" class="fade-in">
+        <header class="header">
+            <div class="header-text">
+                <h1>Monitoring Real-Time</h1>
+                <span>Status kondisi air kolam saat ini</span>
+            </div>
+            <div class="status-esp">Status: <span id="connState">🔄 WAITING</span></div>
+        </header>
+        <main class="container">
+            <div class="sensor-grid">
+                <div class="card info"><h3>Amonia</h3><p id="valAmonia">--</p><span class="unit">ppm</span></div>
+                <div class="card success"><h3>pH Air</h3><p id="valPh">--</p><span class="unit">pH Scale</span></div>
+                <div class="card warning"><h3>Suhu</h3><p id="valSuhu">--</p><span class="unit">°C</span></div>
+            </div>
+            <div class="status-alat-container">
+                <div class="alat-card">
+                    <div class="alat-info"><h4>Pompa Penetral</h4></div>
+                    <span id="statusPompa" class="tag-status off">--</span>
+                </div>
+                <div class="alat-card">
+                    <div class="alat-info"><h4>Aerator Kolam</h4></div>
+                    <span id="statusAerator" class="tag-status off">--</span>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <section id="riwayat" class="fade-in" style="display:none;">
+        <header class="header header-alt">
+            <h1>Riwayat & Grafik</h1>
+            <span>Analisis historis data sensor</span>
+        </header>
+        <main class="container">
+            <div class="chart-box">
+                <h3>Grafik Kualitas Air</h3>
+                <div class="chart-container">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+
+            <div class="table-box">
+                <h3>Log Data Terakhir</h3>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Waktu</th>
+                                <th>Amonia</th>
+                                <th>pH</th>
+                                <th>Suhu</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bodyTabel">
+                            <tr><td colspan="4">Menunggu data ...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <script src="beranda.js"></script>
+</body>
+</html>

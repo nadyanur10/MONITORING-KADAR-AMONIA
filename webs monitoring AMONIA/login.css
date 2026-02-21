@@ -1,0 +1,141 @@
+/* RESET & FONTS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* BACKGROUND GRADIENT SEPERTI SEBELUMNYA */
+.login-body {
+    background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* KOTAK LOGIN */
+.login-box {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.login-icon {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.login-header h2 {
+    color: #1e3a8a;
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.login-header p {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+/* INPUT STYLE */
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #1e40af;
+    margin-bottom: 8px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 16px;
+    background: #f8fafc;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+/* TOMBOL LOGIN HIJAU EMERALD */
+.btn-login {
+    width: 100%;
+    padding: 14px;
+    background: #10b981;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-login:hover {
+    background: #059669;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.4);
+}
+
+.btn-login:active {
+    transform: translateY(0);
+}
+
+/* ALERT / ERROR BOX */
+.alert-hidden {
+    display: none;
+}
+
+.alert-visible {
+    display: block;
+    background: #fee2e2;
+    color: #b91c1c;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border: 1px solid #fecaca;
+    animation: shake 0.4s ease;
+}
+
+/* ANIMASI */
+.fade-in {
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.login-footer {
+    margin-top: 30px;
+    font-size: 12px;
+    color: #94a3b8;
+}

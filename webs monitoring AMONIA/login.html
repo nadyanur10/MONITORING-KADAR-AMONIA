@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masuk - Smart Monitoring</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body class="login-body">
+    <div class="login-box fade-in">
+        <div class="login-header">
+            <!-- <div class="login-icon">🌊</div> -->
+            <h2>Monitoring Air Kolam</h2>
+            <p>Silakan masuk untuk akses data sensor</p>
+        </div>
+
+        <form id="loginForm">
+            <div class="input-group">
+                <label>Username</label>
+                <input type="text" id="username" placeholder="Username" >
+            </div>
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="password" placeholder="Password" >
+            </div>
+            
+            <div id="alert-box" class="alert-hidden"></div>
+            <button type="submit" class="btn-login">MASUK KE SISTEM</button>
+        </form>
+
+        <div class="login-footer">
+            <p>© 2026 – IoT Water Solution</p>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>
